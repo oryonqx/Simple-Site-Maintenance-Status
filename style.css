@@ -1,0 +1,146 @@
+:root {
+    color-scheme: dark;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #f4f6f8;
+    background: #101820;
+
+    --background: #101820;
+    --surface: #19242d;
+    --text: #f4f6f8;
+    --muted: #a0adb7;
+    --accent: #c4f06a;
+    --border: #34424d;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background: var(--background);
+}
+
+.page {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    padding: 40px 24px;
+}
+
+.notice {
+    width: min(100%, 760px);
+    padding: 32px 0;
+    text-align: center;
+}
+
+h1 {
+    max-width: 15ch;
+    margin: 24px auto 18px;
+    color: var(--text);
+    font-size: clamp(2.6rem, 7vw, 5rem);
+    font-weight: 650;
+    letter-spacing: -0.065em;
+    line-height: 1.03;
+}
+
+.message {
+    max-width: 45ch;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    line-height: 1.7;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 34px;
+}
+
+.button {
+    display: inline-flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 20px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    font-size: 0.9rem;
+    font-weight: 650;
+    text-decoration: none;
+    transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.button--primary {
+    background: var(--accent);
+    color: #18210e;
+}
+
+.button--primary:hover {
+    background: #d3f78e;
+}
+
+.button--secondary {
+    border-color: var(--border);
+    background: transparent;
+    color: var(--text);
+}
+
+.button--secondary:hover {
+    border-color: #82919c;
+    background: var(--surface);
+}
+
+.button__arrow {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.note {
+    margin: 56px 0 0;
+    color: #77858f;
+    font-size: 0.82rem;
+}
+
+@media (max-width: 520px) {
+    .page {
+        padding: 24px;
+    }
+
+    h1 {
+        font-size: clamp(2.5rem, 12vw, 3.5rem);
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .note {
+        margin-top: 42px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
